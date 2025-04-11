@@ -1,14 +1,12 @@
-import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
-import Calculadora from './components/Calculadora';
+import Calculadora from './components/calculadora';
 
 export default function App() {
   return (
     <View style={estilo.tela}>
       <Image
-        source={require('./assets/salario.png')}
+        source={require('./assets/salario.jpg')}
         style={estilo.imagem}
-        resizeMode="contain"
       />
       <Text style={estilo.titulo}>Calculadora de Salário</Text>
       <Calculadora />

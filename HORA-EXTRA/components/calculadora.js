@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 
-export default function Calculadora() {
+export default function calculadora() {
   const [salarioBase, setSalarioBase] = useState('');
   const [horas, setHoras] = useState('');
   const [resultado, setResultado] = useState(null);
