@@ -3,3 +3,5 @@ Alt + Z = quebra de linha
 Configuração GitHub
 git config --global user.name Reh200
 git config --global user.email alinerenata1400@gmail.com
+
+Site React Native: https://reactnative.dev/ - É instruções para construir os apps na estrutura. 
