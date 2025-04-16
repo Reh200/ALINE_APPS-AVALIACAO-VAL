@@ -1,35 +1,38 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet, View, Image, Text } from 'react-native';
+import { View, StyleSheet, Image, SafeAreaView } from 'react-native';
+import Tabuleiro from './components/Tabuleiro';
 
-export default function App() {
+const App = () => {
   return (
-    <SafeAreaView style={estilos.container}>
-      <View style={estilos.cabecalho}>
-        <Image source={require('./assets/xadrez-tabuleiro.webp')} style={estilos.imagem} />
-        <Text style={estilos.titulo}>Tabuleiro de Xadrez</Text>
+    <SafeAreaView style={styles.container}>
+      <Image
+        source={require('./assets/pecas-xadrez.jpeg')}
+        style={styles.imagem}
+        resizeMode="cover"
+      />
+      <View style={styles.tabuleiroContainer}>
+        <Tabuleiro />
       </View>
     </SafeAreaView>
   );
-}
+};
 
-const estilos = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#dcdcdc',
     alignItems: 'center',
-    backgroundColor: '#eee',
-  },
-  cabecalho: {
-    alignItems: 'center',
-    marginTop: 20,
   },
   imagem: {
-    width: 150,
-    height: 150,
-    resizeMode: 'contain',
+    width: '100%',
+    height: 200,
   },
-  titulo: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginTop: 10,
+  tabuleiroContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
   },
 });
+
+export default App;

@@ -1,35 +1,42 @@
-import { SafeAreaView, StyleSheet, View, Image, Text } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, StyleSheet, Image, ScrollView } from 'react-native';
+import Entrada from './components/Entrada';
+import Resultado from './components/Resultado';
 
 export default function App() {
+  const [dados, setDados] = useState(null); // Para armazenar os dados calculados
+
+  const calcularResultado = (dadosCalculados) => {
+    setDados(dadosCalculados); // Atualiza os dados com o resultado da conta
+  };
+
   return (
-    <SafeAreaView style={estilos.container}>
-      <View style={estilos.cabecalho}>
-        <Image source={require('./assets/relogio-conta-luz.jpg')} style={estilos.imagem} />
-        <Text style={estilos.titulo}>Gastos de Energia</Text>
-      </View>
-    </SafeAreaView>
+    <ScrollView style={styles.container}>
+      <Image source={require('./assets/relogio-conta-luz.jpg')} style={styles.imagem} />
+      <Text style={styles.titulo}>Simulador de Conta de Luz</Text>
+      <Entrada onCalcular={calcularResultado} />
+      <Resultado dados={dados} />
+    </ScrollView>
   );
 }
 
-const estilos = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    backgroundColor: '#eee',
-  },
-  cabecalho: {
-    alignItems: 'center',
-    marginTop: 20,
+    padding: 20,
+    backgroundColor: '#fff',
   },
   imagem: {
-    width: 150,
+    width: '100%',
     height: 150,
-    resizeMode: 'contain',
+    marginBottom: 10,
+    borderRadius: 8,
   },
   titulo: {
-    fontSize: 24,
+    fontSize: 22,
+    textAlign: 'center',
     fontWeight: 'bold',
-    marginTop: 10,
+    marginBottom: 20,
+    color: '#333',
   },
 });
-

@@ -5,3 +5,4 @@ git config --global user.name Reh200
 git config --global user.email alinerenata1400@gmail.com
 
 Site React Native: https://reactnative.dev/ - É instruções para construir os apps na estrutura. 
+Outro site: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/isNaN
